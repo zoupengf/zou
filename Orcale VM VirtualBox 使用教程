@@ -1,0 +1,35 @@
+# Orcale VM VirtualBox 安装
+
+1. 访问VirtualBox官网 
+
+   https://www.virtualbox.org/
+   
+2. 选择左侧的“Downloads”
+
+3.选择对应的操作系统版本
+
+4.傻瓜式安装
+
+5. [win10中若出现]安装virtualbox快完成时立即回滚，并提示安装出现严重错误
+    (1)打开服务
+    (2)找到Device Install Service和Device Setup Manager，然后启动
+    (3)再次尝试安装
+
+
+# Orcale VM VirtualBox 基础创建虚拟机
+
+1.首先准备 cnetos 镜像
+ 
+   https://mirrors.aliyun.com/centos/7/isos/x86_64/
+
+2.安装的时候，需要点击 连接 （有线网络）
+  
+  命令 ip a 查看地址
+
+3.点击管理-->设置全局
+
+  设置全局的 NatnetWork -> 转发接口设置 【目的：把虚拟机的ip映射到宿主机的 端口上】
+  
+4.  重启 虚拟机
+
+5. Xshell 连接虚拟机，则通过 宿主主机的端口 访问
