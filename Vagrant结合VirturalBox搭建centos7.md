@@ -1,6 +1,6 @@
 # 01 Docker序幕揭开篇
 
-## 1.1 使用Vagrant+VirtualBox安装Cnetos7
+# 1.1 使用Vagrant+VirtualBox安装Cnetos7
 
 # Vagrant安装：
     https://www.vagrantup.com/
@@ -9,23 +9,27 @@
 # 在线玩Docker
 	http://labs.play-with-docker.com
 
+# 检查端口号是否被占用
 
-### 1.1.1 创建D:\VM\docker-centos7文件夹，并进入此目录
+netstat -ano|findstr 8009
+taskkill /f /pid 14496
+
+# 1.1.1 创建D:\VM\docker-centos7文件夹，并进入此目录
 
 	mkdir D:\VM\docker-centos7 [创建文件夹]
 	cd D:\VM\docker-centos7 [进入目录]
 
 
-### 1.1.2 在目录中打开cmd命令
+# 1.1.2 在目录中打开cmd命令
 
     vagrant init centos/7 [此时会在当前目录下生成Vagrantfile文件]
 
-### 1.1.3 添加virtualbox
+# 1.1.3 添加virtualbox
 
     vagrant box add centos/7 D:\VM\virtualbox.box [添加virtualbox]
     vagrant box list [查看是否添加成功]
 
-### 1.1.4 修改Vagrantfile文件
+# 1.1.4 修改Vagrantfile文件
 
 01 修改config.vm.box 镜像名，centos/7是在第三步添加的
     config.vm.box = "centos/7"
@@ -38,26 +42,26 @@
         vb.cpus= 2
     end
 
-### 1.1.5 开启虚拟机
+# 1.1.5 开启虚拟机
     vagrant up
 
-### 1.1.6 Xshell工具连接虚拟机
+# 1.1.6 Xshell工具连接虚拟机
 
 	vagrant ssh-config
-# IP
+IP
     127.0.0.1
-# Port
+Port
     2222
-# 用户名
+用户名
     vagrant
-# 密码
+密码
     vagrant
-# Key文件
+Key文件
     Identityfile路径
-# 使用Xshell连接centos7
+使用Xshell连接centos7
     用127.0.0.1连2222端口 或者 用centos7的ip连22端口
 
-### 1.1.7 Root账户登陆
+# 1.1.7 Root账户登陆
 
 01 切换root用户
     sudo -i
@@ -72,7 +76,7 @@
 06 使用root登陆
     ssh root@10.13.11.84
 
-### 1.1.8 box打包分发
+# 1.1.8 box打包分发
 
 01 退出虚拟机
     vagrant halt
@@ -85,9 +89,9 @@
 05 启动虚拟机
     vagrant up
 
-## 1.3 常用命令
+# 1.3 常用命令
 
-### 1.3.1 vagrant常用命令
+# 1.3.1 vagrant常用命令
 
 # 进入虚拟机
     vagrant ssh
