@@ -55,8 +55,11 @@ sudo docker run hello-world
         docker exec -it containerid /bin/bash
 
 
+4.docker-compose 安装
 
-
+ 第一步： sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+ 第二步： sudo chmod +x /usr/local/bin/docker-compose
+ 第三步： docker-compose --version
 
 
 
